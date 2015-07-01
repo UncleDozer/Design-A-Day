@@ -1,0 +1,289 @@
+@charset "UTF-8";
+/* *----------------------------------------{{{
+ * Author    : Kristopher Watts
+ * Email     : kristopher.a.watts@gmail.com
+ * Website   : http://Webtastic-Development.net
+ * Github    : https://github.com/uncledozer
+ * License   : GNU (See License.MD for Details)
+ * Copywrite : 2015
+ * *----------------------------------------}}}
+ */
+/* *----------------------------------------
+ * BREAKPOINTS{{{
+ * *----------------------------------------
+ *
+ * Use min-device-width for Ios devices
+ * *------------------------
+ *
+ * $smartphone-landscape : (min-device-width: 321px);
+ * $smartphone-portrait  : (max-device-width: 320px);
+ * $tablet-landscape     : (min-device-width: 768px);
+ * $tablet-portrait      : (max-device-width: 769px);
+ * $desktop              : (min-width: 1224px);
+ * $desktop-large        : (min-width: 1824px);
+ * @include breakpoint(breakpointname){
+ *   Styles
+ * }
+ */
+/* }}}
+ *----------------------------------------
+ */
+/* *----------------------------------------
+ * MIXINS{{{
+ * *----------------------------------------
+ */
+/**
+ * SeCSSY Functions
+ *
+ */
+/**
+ * Recursively search nested lists
+ * and return a key.
+ *
+ * @Param $map The target map
+ *
+ * @Param $keys The last key value is returned.
+ * All keys before the last are treated as nested maps.
+ */
+/**
+ * Recursively search the $GLOBALS list and return a key value
+ * Acts as a visually identifiable get() function.
+ *
+ * @Param $keys The last key value is returned.
+ * All keys before the last must be treated as nested maps.
+ */
+/**
+ * SCSS color functions don't play nicely
+ * with lists, so assign an existing variable
+ * containing the list key value.
+ *
+ * @Param $targetVar The variable to reassign
+ *
+ * @Param $map The target map
+ *
+ * @Param $keys Convert last key to variable
+ * All keys before the last must be nested maps.
+ */
+/**
+ * Pretty up the @import var
+ *
+ */
+/**
+ * @Author Kristopher Watts <kristopher.a.watts@gmail.com>
+ * @CopyWrite 2015 Kristopher Watts
+ * @Website http://webtastic-development.net/SECCSY
+ *
+ */
+/**
+ * Vendor Prefixes!
+ */
+/**
+ * Create an element to fill remaining
+ * width of container element
+ *
+ */
+/**
+ * Often used css attributes that require prefixes
+ *
+ */
+/* *----------------------------------------
+ * threeD( $color, $size, $step, $blur, $textShadow );
+ * Three Dimensional text effect
+ * {{{
+ * *----------------------------------------
+ * @Param string|css-color $color
+ *
+ * @Param integer $size denotes the
+ * initial size to start shadow size at
+ *
+ * @Param integer $step denotes the size
+ * increase for each subsequent shadow
+ *
+ * @Param integer $blur applies shadow blur
+ *
+ * @Param boolean $textshadow if true apply text-shadow
+ * if false, apply box-shadow
+ */
+/* }}}
+ * *----------------------------------------
+ */
+/* *----------------------------------------
+ * progressBar( $class ) { @content }
+ * Prefix aware HTML5 progress-bar styling
+ * {{{
+ * *----------------------------------------
+ */
+/* }}}
+ * *----------------------------------------
+ */
+/* *----------------------------------------
+ * GLOBAL VARIABLES{{{
+ * *----------------------------------------
+ * 1: Colors
+ * 2: Fonts
+ *  2.1: Weights
+ *  2.2: Sizes
+ * 3: Breakpoints
+ * }}}
+ * ----------------------------------------
+ */
+/* Design A Week Vars, July 01 */
+.card > p {
+  padding-left: 60px;
+  padding-right: 60px; }
+  @media only screen and (max-width: 800px) {
+    .card > p {
+      padding-left: 30px;
+      padding-right: 30px; } }
+
+h1 {
+  padding-top: 15px; }
+
+h1, .card > p {
+  padding-bottom: 15px; }
+
+h2, h3 {
+  color: #2EB9FF; }
+
+/*
+ * *----------------------------------------
+ * Layout Styles
+ * *----------------------------------------
+ * Styles throughout the website
+ *
+ */
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 100%; }
+
+body {
+  background: #DADADA; }
+
+h1,
+h2 {
+  width: 100%; }
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  background: #2EB9FF;
+  font-size: 2.6rem;
+  color: #F5F5F5; }
+
+h2 {
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-size: 2rem; }
+
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0px;
+  margin-top: 0px; }
+
+section {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0; }
+
+header, .card {
+  box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.25); }
+
+.card {
+  position: relative;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
+  max-width: 600px;
+  height: 25%;
+  max-height: 500px;
+  padding: 0 0;
+  background-color: #F5F5F5;
+  border-radius: 3px;
+  overflow: auto;
+  font-size: 1.6rem; }
+  .card:nth-child(2) {
+    margin-top: 65px; }
+  .card > h1, .card h2 {
+    text-align: center; }
+  .card > p {
+    text-align: left;
+    color: #5a5a5a; }
+  @media only screen and (max-width: 800px) {
+    .card {
+      width: 90%;
+      max-width: 90%;
+      min-width: 90%; }
+      .card > blockquote {
+        width: 85%; } }
+
+.blogPost {
+  height: auto;
+  min-height: 300px;
+  max-height: none;
+  width: 75%;
+  max-width: 75%; }
+  .blogPost > .blogInfo > .avatar {
+    position: relative;
+    display: block;
+    float: left;
+    width: 125px;
+    height: 125px;
+    margin-left: 60px;
+    border: 8px solid #2EB9FF;
+    border-radius: 100%;
+    background-image: url("../../img/avatar.jpg");
+    background-position: 45% 55%;
+    background-size: cover; }
+    @media only screen and (max-width: 800px) {
+      .blogPost > .blogInfo > .avatar {
+        margin-left: 15px; } }
+  .blogPost > .blogInfo > h3 {
+    position: relative;
+    padding-top: 31.25px;
+    padding-left: 20px;
+    text-align: left;
+    overflow: hidden; }
+  .blogPost > blockquote {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    text-align: left;
+    width: 50%;
+    background: #e8e8e8;
+    border-left: 10px solid #0095e1;
+    quotes: "“" "”" "‘" "’"; }
+    .blogPost > blockquote:before {
+      color: #2EB9FF;
+      content: open-quote;
+      position: absolute;
+      top: -45px;
+      left: 10px;
+      font-size: 13rem;
+      margin: 0;
+      padding: 0; }
+    .blogPost > blockquote > p {
+      font-size: 2.6rem;
+      color: #5a5a5a;
+      text-align: center; }
+
+header.card {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  max-height: none;
+  min-height: 0;
+  margin-top: 0;
+  margin: 0;
+  /* height: 125px; */ }
+  header.card a, header.card h1 {
+    background: #4BC273;
+    margin: 0;
+    text-align: center;
+    text-decoration: none; }
