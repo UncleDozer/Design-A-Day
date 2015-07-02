@@ -1,0 +1,64 @@
+/*
+ * *----------------------------------------
+ * Layout Styles
+ * *----------------------------------------
+ * Styles throughout the website
+ *
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background: $background;
+}
+
+h1,
+h2,
+{
+    width: 100%;
+    text-align: center;
+    color: $background;
+}
+
+h1 {
+    font-size: global( fonts, sizes, gigantic ) * 2;
+    /* color: lighten( $background, 15% ); */
+    color: $background;
+    @include threeD( darken( $background, 15% ), -4, 4, 0.0, true );
+}
+
+h2 {
+    font-size: global( fonts, sizes, large );
+    @include threeD( darken( $background, 15% ), -2, 2, 0, true );
+}
+
+a, h3 {
+    @include threeD( darken( $background, 25% ), -1, 2, 4, true );
+    color: $background;
+    text-align: center;
+    font-size: global( fonts, sizes, huge );
+    text-decoration: none;
+}
+
+h3 {
+    margin: 0;
+    background: darken( $background, 5% );
+    color: lighten( $background, 5% );
+    @include threeD( darken( $background, 15% ), -3, 6, 5, false  );
+}
+
+a {
+}
+
+h2, h3 {
+}
+
+section {
+}
+

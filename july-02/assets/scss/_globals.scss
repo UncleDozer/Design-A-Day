@@ -1,0 +1,105 @@
+/* *----------------------------------------
+ * GLOBAL VARIABLES{{{
+ * *----------------------------------------
+ * 1: Colors
+ * 2: Fonts
+ *  2.1: Weights
+ *  2.2: Sizes
+ * 3: Breakpoints
+ * }}}
+ * ----------------------------------------
+ */
+
+$GLOBALS: (
+
+/* *----------------------------------------
+ * 1: COLORS{{{
+ * *----------------------------------------
+ */
+    colors: (
+        blue  : #2EB9FF,
+        green : #4BC273,
+        red   : #CF3648,
+        white : #F5F5F5,
+        black : #191919,
+        grey  : #DADADA,
+        grey  : #DADADA,
+    ),
+/* }}}
+ * *----------------------------------------
+ */
+
+/* *----------------------------------------
+ * 2: FONTS{{{
+ * *----------------------------------------
+ */
+    fonts: (
+        sans-serif    : 'Open Sans',
+        sans-fallback :  sans-serif,
+
+        weights: (
+            light  : 300,
+            normal : 400,
+            bold   : 600,
+            bolder : 700,
+        ),
+
+        sizes: (
+            tiny     :  .9rem,
+            small    : 1.3rem,
+            normal   : 1.6rem,
+            large    : 2.0rem,
+            huge     : 2.6rem,
+            gigantic : 4.5rem,
+        ),
+    ),
+ /* }}}
+ * *----------------------------------------
+ */
+
+/* *----------------------------------------
+ * 3: BREAKPOINTS{{{
+ * *----------------------------------------
+ */
+    breakpoints : (
+        phone   : 500px,
+        tablet  : 800px,
+        desktop : 801px,
+    ),
+ /* }}}
+ * *----------------------------------------
+ */
+
+
+); // Global End
+
+/* Design A Week Vars, July 01 */
+$background: global( colors, white );
+$cardBackground: global( colors, white );
+$textColor: global( colors, white );
+
+%padding-horiz {
+    padding-left: 60px;
+    padding-right: 60px;
+    @media only screen and ( max-width: global( breakpoints, tablet ) ) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+%padding-top {
+    padding-top: 15px;
+}
+
+%padding-bottom {
+    padding-bottom: 15px;
+}
+
+%padding-vert {
+    @extend %padding-top;
+    @extend %padding-bottom;
+}
+
+%textBlue {
+    color: global( colors, blue );
+}

@@ -1,0 +1,108 @@
+/**
+ * @Author Kristopher Watts <kristopher.a.watts@gmail.com>
+ * @CopyWrite 2015 Kristopher Watts
+ * @Website http://webtastic-development.net/SECCSY
+ *
+ */
+
+/**
+ * Vendor Prefixes!
+ */
+@mixin prefix( $value, $prefixes:( '-webkit-', '-moz-', '-o-', '-ms-', '' ) ) {
+    @each $prefix in $prefixes {
+        $prefix: $value;
+    }
+}
+
+/**
+ * Create an element to fill remaining
+ * width of container element
+ *
+ */
+@mixin filler( $float: right, $maxWidth: 'null' ) {
+    overflow: hidden;
+    float: $float;
+
+    @if $maxWidth == 'null' {
+    // Do nothing
+    } @else {
+        // Assign Max Width
+        max-width: $maxWidth;
+    }
+}
+
+/**
+ * Often used css attributes that require prefixes
+ *
+ */
+@mixin filter( $value ) {
+    @include prefix( filter, $value );
+}
+
+@mixin transform( $value ) {
+    @include prefix( transform, $value );
+}
+
+@mixin userSelect( $value ) {
+    @include prefix( user-select, $value );
+}
+
+/* *----------------------------------------
+ * threeD( $color, $size, $step, $blur, $textShadow );
+ * Three Dimensional text effect
+ * {{{
+ * *----------------------------------------
+ * @Param string|css-color $color
+ *
+ * @Param integer $size denotes the
+ * initial size to start shadow size at
+ *
+ * @Param integer $step denotes the size
+ * increase for each subsequent shadow
+ *
+ * @Param integer $blur applies shadow blur
+ *
+ * @Param boolean $textshadow if true apply text-shadow
+ * if false, apply box-shadow
+ */
+@mixin threeD( $color, $size: 2, $step: 2, $blur: .5px, $textShadow: true ) {
+    $fallback: 0px #{ $size } #{ $blur } darken( $color, 2% );
+    $shadowVal: 0px 2px 1px darken( $color, 2% ),
+    0px #{ $size + $step }px #{ $blur }px darken( $color, 4% ),
+    0px #{ $size + $step * 2 }px #{ $blur }px darken( $color, 6% ),
+    0px #{ $size + $step * 3 }px #{ $blur }px darken( $color, 8% ),
+    3px 8px 15px rgba( black, 0.1 ),
+    3px 8px 5px rgba( black, 0.3 );
+
+    @if $textShadow == true {
+        text-shadow: $fallback;
+        text-shadow: $shadowVal;
+    } @else {
+        box-shadow: $fallback;
+        box-shadow: $shadowVal;
+    }
+}
+/* }}}
+ * *----------------------------------------
+ */
+
+/* *----------------------------------------
+ * progressBar( $class ) { @content }
+ * Prefix aware HTML5 progress-bar styling
+ * {{{
+ * *----------------------------------------
+ */
+@mixin progressBar( $class ) {
+    // Webkit based browsers ( chrome, opera, etc. )
+    #{$class}::-webkit-progress-value {
+        @content;
+    }
+
+    // Gecko based browsers ( firefox, palemoon, etc. )
+    #{$class}::-moz-progress-bar {
+        @content;
+    }
+}
+/* }}}
+ * *----------------------------------------
+ */
