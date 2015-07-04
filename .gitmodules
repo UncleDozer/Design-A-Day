@@ -1,3 +1,5 @@
 [submodule "design-a-day-template/assets/scss"]
 	path = design-a-day-template/assets/scss
 	url = https://github.com/UncleDozer/SeCSSY
+[submodule "design-a-day-template"]
+    path = design-a-day-template
