@@ -3,3 +3,5 @@
 	url = https://github.com/UncleDozer/SeCSSY
 [submodule "design-a-day-template"]
     path = design-a-day-template
+[submodule "july-04"]
+    path = july-04
