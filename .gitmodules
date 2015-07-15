@@ -5,3 +5,5 @@
     path = design-a-day-template
 [submodule "july-04"]
     path = july-04
+[submodule "july-05"]
+    path = july-05
